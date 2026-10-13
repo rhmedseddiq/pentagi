@@ -1,0 +1,19 @@
+{
+  "name": "gaming-windows-client",
+  "mode": "scoped-assessment",
+  "description": "Windows client and its approved backend interactions; optional REA artifact-analysis adapter.",
+  "requires_scope_enforcer": true,
+  "allowed_targets": [],
+  "allowed_cidrs": [],
+  "budgets": {"max_runtime_seconds": 3600, "max_total_tokens": 120000, "max_cost_usd": 5.0, "max_tasks": 50, "poll_interval_seconds": 5},
+  "rea_adapter": "optional",
+  "objectives": [
+    "Assess updater signature validation, rollback and downgrade behavior, local credential storage, IPC, DLL loading, local privilege boundaries, and backend authorization.",
+    "Exercise adversarial inputs and chained client-to-service abuse cases in a disposable Windows VM.",
+    "Correlate binary-analysis evidence with approved API and device-licensing targets."
+  ],
+  "operational_constraints": [
+    "Use a disposable Windows VM, synthetic identities, and a test build.",
+    "Keep REA optional; network and API assessment works without a compiled-binary adapter."
+  ]
+}

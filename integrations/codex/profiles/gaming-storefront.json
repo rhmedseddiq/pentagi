@@ -1,0 +1,18 @@
+{
+  "name": "gaming-storefront",
+  "mode": "scoped-assessment",
+  "description": "Storefront web application, account, catalog, cart, and checkout assessment.",
+  "requires_scope_enforcer": true,
+  "allowed_targets": [],
+  "allowed_cidrs": [],
+  "budgets": {"max_runtime_seconds": 3600, "max_total_tokens": 120000, "max_cost_usd": 5.0, "max_tasks": 50, "poll_interval_seconds": 5},
+  "objectives": [
+    "Assess authentication, session handling, account recovery, catalog/search, product details, cart, checkout, pricing, coupon, and entitlement transitions.",
+    "Test access control, injection, cross-site scripting, CSRF, request smuggling, SSRF, race conditions, and business-logic chains where the approved scope supports them.",
+    "Check that server-side price and ownership decisions do not trust client-controlled state."
+  ],
+  "operational_constraints": [
+    "Use only approved test accounts and non-production catalog data.",
+    "Keep payment actions in the processor sandbox and do not create real charges."
+  ]
+}

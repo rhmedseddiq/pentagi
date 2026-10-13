@@ -1,0 +1,18 @@
+{
+  "name": "gaming-game-redemption",
+  "mode": "scoped-assessment",
+  "description": "Game-key and entitlement redemption, replay, race, and account-binding behavior.",
+  "requires_scope_enforcer": true,
+  "allowed_targets": [],
+  "allowed_cidrs": [],
+  "budgets": {"max_runtime_seconds": 3600, "max_total_tokens": 120000, "max_cost_usd": 5.0, "max_tasks": 50, "poll_interval_seconds": 5},
+  "objectives": [
+    "Assess redemption authorization, key uniqueness, replay protection, concurrency, entitlement creation, and account binding.",
+    "Test abuse chains involving invalid, expired, duplicated, or cross-account test keys and redemption status transitions.",
+    "Verify that redemption outcomes remain consistent across API, storefront, and account inventory views."
+  ],
+  "operational_constraints": [
+    "Use only synthetic or operator-issued test keys that cannot grant commercial entitlements.",
+    "Do not enumerate, redeem, or retain live distribution keys."
+  ]
+}

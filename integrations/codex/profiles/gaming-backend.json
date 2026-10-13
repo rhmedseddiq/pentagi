@@ -1,0 +1,18 @@
+{
+  "name": "gaming-backend",
+  "mode": "scoped-assessment",
+  "description": "Gaming Arena backend services, APIs, service-to-service trust, and data boundaries.",
+  "requires_scope_enforcer": true,
+  "allowed_targets": [],
+  "allowed_cidrs": [],
+  "budgets": {"max_runtime_seconds": 3600, "max_total_tokens": 120000, "max_cost_usd": 5.0, "max_tasks": 50, "poll_interval_seconds": 5},
+  "objectives": [
+    "Assess API authentication and authorization, tenant and account boundaries, object-level access, injection, SSRF, deserialization, and rate controls.",
+    "Trace high-value data paths and service-to-service trust assumptions through chained abuse cases.",
+    "Check input validation, error handling, secrets exposure, and security-relevant logging."
+  ],
+  "operational_constraints": [
+    "Use only approved service endpoints and test identities.",
+    "Do not retrieve or retain real player records, payment data, or production secrets."
+  ]
+}

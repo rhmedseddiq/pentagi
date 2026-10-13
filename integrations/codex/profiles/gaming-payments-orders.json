@@ -1,0 +1,18 @@
+{
+  "name": "gaming-payments-orders",
+  "mode": "scoped-assessment",
+  "description": "Payment and order state machines, processor callbacks, pricing, refunds, and idempotency.",
+  "requires_scope_enforcer": true,
+  "allowed_targets": [],
+  "allowed_cidrs": [],
+  "budgets": {"max_runtime_seconds": 3600, "max_total_tokens": 120000, "max_cost_usd": 5.0, "max_tasks": 50, "poll_interval_seconds": 5},
+  "objectives": [
+    "Test price and currency integrity, order-state transitions, idempotency, replay resistance, concurrent requests, refund controls, and webhook signature validation.",
+    "Exercise authorized business-logic chains across checkout, payment confirmation, fulfillment, refunds, and account entitlements.",
+    "Verify that payment and order records cannot be accessed or altered across accounts."
+  ],
+  "operational_constraints": [
+    "Use the payment processor sandbox and operator-provided test payment methods only.",
+    "Never submit a real charge or refund, and do not use live cardholder data or production webhook secrets."
+  ]
+}

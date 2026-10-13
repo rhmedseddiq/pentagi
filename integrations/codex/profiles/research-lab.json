@@ -1,0 +1,24 @@
+{
+  "name": "research-lab",
+  "mode": "research-lab",
+  "description": "Disposable, isolated lab; full PentAGI offensive techniques and agent autonomy are enabled.",
+  "requires_scope_enforcer": false,
+  "allowed_targets": ["localhost"],
+  "allowed_cidrs": ["127.0.0.0/8", "::1/128"],
+  "budgets": {
+    "max_runtime_seconds": 14400,
+    "max_total_tokens": 250000,
+    "max_cost_usd": 10.0,
+    "max_tasks": 100,
+    "poll_interval_seconds": 5
+  },
+  "objectives": [
+    "Exercise the complete autonomous PentAGI agent and tool chain against the disposable lab target.",
+    "Use exploitation, chained testing, adversarial cases, and tool installation where the isolated lab permits it.",
+    "Record reproducible evidence and distinguish confirmed outcomes from hypotheses."
+  ],
+  "operational_constraints": [
+    "Run PentAGI and targets on a disposable, authorized research network with no route to production assets.",
+    "Use synthetic accounts and data. Do not place real payment credentials, player data, or production keys in the lab."
+  ]
+}

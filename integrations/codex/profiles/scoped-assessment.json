@@ -1,0 +1,24 @@
+{
+  "name": "scoped-assessment",
+  "mode": "scoped-assessment",
+  "description": "Authorized assessment with exact allowlists, an exclusive default-deny worker egress lease, and monitored run budgets.",
+  "requires_scope_enforcer": true,
+  "allowed_targets": [],
+  "allowed_cidrs": [],
+  "budgets": {
+    "max_runtime_seconds": 3600,
+    "max_total_tokens": 120000,
+    "max_cost_usd": 5.0,
+    "max_tasks": 50,
+    "poll_interval_seconds": 5
+  },
+  "objectives": [
+    "Perform the complete autonomous assessment within the approved target scope.",
+    "Preserve all PentAGI offensive techniques and multi-agent behavior; enforce authorization at the target and network boundary."
+  ],
+  "operational_constraints": [
+    "Use only explicitly approved exact hostnames and CIDR ranges.",
+    "The worker-node egress enforcer must be exclusive to this run and installed before flow creation.",
+    "Use designated test identities and synthetic data; redact secrets and personal data from evidence."
+  ]
+}

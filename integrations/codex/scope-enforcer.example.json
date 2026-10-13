@@ -1,0 +1,12 @@
+{
+  "listen": "127.0.0.1",
+  "port": 8765,
+  "worker_subnets": [],
+  "dns_servers": [],
+  "control_networks": [],
+  "control_tcp_ports": [],
+  "support_networks": [],
+  "support_tcp_ports": [],
+  "nft_binary": "nft",
+  "state_file": "/run/pentagi-codex-scope/lease.json"
+}

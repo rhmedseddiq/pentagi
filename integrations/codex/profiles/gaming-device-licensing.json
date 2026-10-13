@@ -1,0 +1,18 @@
+{
+  "name": "gaming-device-licensing",
+  "mode": "scoped-assessment",
+  "description": "Device enrollment, licensing, rebind limits, replay, and entitlement checks.",
+  "requires_scope_enforcer": true,
+  "allowed_targets": [],
+  "allowed_cidrs": [],
+  "budgets": {"max_runtime_seconds": 3600, "max_total_tokens": 120000, "max_cost_usd": 5.0, "max_tasks": 50, "poll_interval_seconds": 5},
+  "objectives": [
+    "Assess device registration, account-device binding, rebind and revocation limits, signed challenges, replay resistance, and license refresh behavior.",
+    "Test trust boundaries around client-supplied device identifiers, clocks, caches, and offline licensing state.",
+    "Trace abuse chains across enrollment, license issuance, refresh, transfer, and revocation."
+  ],
+  "operational_constraints": [
+    "Use designated test accounts and disposable test devices or VMs.",
+    "Do not invalidate real customer licenses or change production device bindings."
+  ]
+}

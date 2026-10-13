@@ -1,0 +1,18 @@
+{
+  "name": "gaming-admin-panel",
+  "mode": "scoped-assessment",
+  "description": "Gaming Arena administrative interfaces, privileged workflows, and staff access controls.",
+  "requires_scope_enforcer": true,
+  "allowed_targets": [],
+  "allowed_cidrs": [],
+  "budgets": {"max_runtime_seconds": 3600, "max_total_tokens": 120000, "max_cost_usd": 5.0, "max_tasks": 50, "poll_interval_seconds": 5},
+  "objectives": [
+    "Assess staff authentication, role transitions, privileged APIs, tenant separation, approval workflows, and audit logging.",
+    "Test privilege escalation, IDOR, CSRF, session fixation, injection, and chained paths from lower-privilege accounts.",
+    "Verify that administrative actions are bound to the expected actor, target, and approval context."
+  ],
+  "operational_constraints": [
+    "Use operator-provided staff test accounts with the minimum required roles.",
+    "Use non-production records and avoid changing real account, catalog, or entitlement state."
+  ]
+}
