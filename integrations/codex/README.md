@@ -75,6 +75,8 @@ Profiles are provided for the storefront, backend, admin panel, payment/order fl
    The example binds to `127.0.0.1`. For Codex to reach a remote worker, use an authenticated private route or a TLS/mTLS reverse proxy; do not expose the firewall API to the public internet. A non-loopback bind requires TLS certificate and key paths.
 5. Verify `GET /healthz`, then run a disposable test flow through the scoped profile. The enforcer resolves exact hostnames from the worker's DNS view and pins the returned addresses for the lease. DNS rebinding to a different address cannot widen the worker's permitted destinations.
 
+The firewall enforces destination IPs, not HTTP `Host` headers or TLS SNI. If an approved hostname shares an IP with other virtual hosts, those services are reachable at the network layer; keep the assessment authorization explicit for shared infrastructure, or use dedicated target addresses where that distinction matters. The agent prompt still carries the exact hostname scope, but it is not a substitute for a layer-7 egress proxy.
+
 The enforcer deliberately supports one active lease. A separate PentAGI worker network/instance is needed for concurrent engagements. If a lease remains after an interrupted or ambiguous API request, inspect `scope-status`, verify that flow is stopped in PentAGI, then release it:
 
 ```sh
